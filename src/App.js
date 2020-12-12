@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./index.css";
+import SlotMachine from "./SlotMachine";
+const App = () => {
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      
+      <h1 className="main-heading">🎰 Welcome to <span style={{ fontWeight: 500}}> Slot Machine game</span>🎰</h1>
+      <div className="slot-box">
+      <SlotMachine x="😄" y="😄" z="😄"/>
+      <SlotMachine x="😄" y="😄" z="🎅" />
+      <SlotMachine x="🍎" y="🍌" z="😄"/>
+      </div>
+      
+      </>
+    );
 }
-
 export default App;
