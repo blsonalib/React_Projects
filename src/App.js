@@ -1,19 +1,27 @@
-import React from "react";
-import "./index.css";
-import SlotMachine from "./SlotMachine";
-const App = () => {
+import React, { useState } from "react";
+import "./CSS/Apps.css"
 
+
+
+
+
+let count = 1;
+
+const App = () => {
+  const state = useState();
+  const [count,stateFun] = useState(0);
+  const IncNumber = () => {
+    stateFun(count + 1);
+  }
   return (
     <>
-      
-      <h1 className="main-heading">🎰 Welcome to <span style={{ fontWeight: 500}}> Slot Machine game</span>🎰</h1>
-      <div className="slot-box">
-      <SlotMachine x="😄" y="😄" z="😄"/>
-      <SlotMachine x="😄" y="😄" z="🎅" />
-      <SlotMachine x="🍎" y="🍌" z="😄"/>
+      <div className="container">
+        <h1 className="heading">{ count}</h1>
+      <button type="button" onClick = {IncNumber} className="btn">Click Me!</button>
       </div>
-      
-      </>
-    );
+     
+    </>
+    
+  )
 }
 export default App;
