@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 
-import "./CSS/Apps.css"
+const App = () => {
+  const bgColor = "#86465c"
+  const [bg, sBg] = useState(bgColor);
 
-const App = () => { 
-  let time = new Date().toLocaleTimeString();
-  const [cTime, sCTime] = useState(time);
-
-  const updateTime = () => {
-    time = new Date().toLocaleTimeString();
-    sCTime(time)
+  //for text
+  const text = "click me !"
+  const[Ctext, sText] = useState(text)
+  const BgChange = () => {
+    const bgNewColor = "#054d57";
+    sBg(bgNewColor);
+    sText("yo!! 😄")
   }
-
-  setInterval(updateTime,1000)
+  const BgBack = () => {
+    sBg( bgColor);
+    sText("yo ho!! 😠")
+  }
   return (
     <>
-      <h1 className="container">{ cTime}</h1>
+      <div style={{background : bg}}>
+        <button onClick={BgChange} onDoubleClick= {BgBack}>{ Ctext }</button>
+      </div>
     </>
   )
 }
