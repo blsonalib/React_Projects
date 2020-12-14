@@ -1,0 +1,9 @@
+.home-box{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #612e43;
+    color: #fff;
+}

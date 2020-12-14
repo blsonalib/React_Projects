@@ -1,27 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
+import Menu from "./Components/Menu";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 const App = () => {
-  const bgColor = "#86465c"
-  const [bg, sBg] = useState(bgColor);
-
-  //for text
-  const text = "click me !"
-  const[Ctext, sText] = useState(text)
-  const BgChange = () => {
-    const bgNewColor = "#054d57";
-    sBg(bgNewColor);
-    sText("yo!! 😄")
-  }
-  const BgBack = () => {
-    sBg( bgColor);
-    sText("yo ho!! 😠")
-  }
   return (
     <>
-      <div style={{background : bg}}>
-        <button onClick={BgChange} onDoubleClick= {BgBack}>{ Ctext }</button>
-      </div>
-    </>
+      <Router>
+         <div>
+          <Menu />
+          <Switch>
+          <Route path="/" exact>
+            <Home />
+            </Route>
+          <Route path="/about">
+            <About/>
+          </Route>
+          <Route path="/contact">
+            <Contact/>
+            </Route>
+            </Switch>
+         </div>
+      </Router>
+     
+      
+  </>
   )
+ 
 }
 export default App;
