@@ -1,27 +1,21 @@
 import React, { useState } from "react";
+
 import "./CSS/Apps.css"
 
+const App = () => { 
+  let time = new Date().toLocaleTimeString();
+  const [cTime, sCTime] = useState(time);
 
-
-
-
-let count = 1;
-
-const App = () => {
-  const state = useState();
-  const [count,stateFun] = useState(0);
-  const IncNumber = () => {
-    stateFun(count + 1);
+  const updateTime = () => {
+    time = new Date().toLocaleTimeString();
+    sCTime(time)
   }
+
+  setInterval(updateTime,1000)
   return (
     <>
-      <div className="container">
-        <h1 className="heading">{ count}</h1>
-      <button type="button" onClick = {IncNumber} className="btn">Click Me!</button>
-      </div>
-     
+      <h1 className="container">{ cTime}</h1>
     </>
-    
   )
 }
 export default App;
