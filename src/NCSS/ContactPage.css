@@ -1,0 +1,30 @@
+.contact-box{
+    height: 600px;
+    width: 100%;
+    text-align:  center;
+ 
+    background: #612e43;
+    color: #fff;
+    padding: 2rem;
+}
+ input[type="text"],input[type="email"], input[type="number"]{
+   padding: 0.5rem;  
+   margin: 0.5rem;
+   border : 1px solid #797878; 
+  
+}
+textarea{
+    height: 70px;
+    border-radius: 2px;
+    resize: none;
+    border : 1px solid #797878; 
+}
+
+input[type="submit"]{
+    display: inline-block;
+    background: #5e5a5a;
+    padding: 10px;
+    margin: 8px;
+    color: #fff; 
+    border:none;
+}
