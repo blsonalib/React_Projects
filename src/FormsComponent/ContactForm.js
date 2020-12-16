@@ -20,6 +20,7 @@ class ContactForm extends Component{
     HandleSubmit = (event) => {
        
         alert(JSON.stringify(this.state))
+        console.log(JSON.stringify(this.state))
         event.preventDefault();
     }
     render() {
